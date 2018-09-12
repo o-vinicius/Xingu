@@ -1,5 +1,8 @@
 $(function() {
-
+    
+    var alturaheader = $('.header-main').outerHeight();
+    $('.header-spacer').css("height", alturaheader);
+    
     $(window).enllax();
     
     $('.carousel').owlCarousel({
