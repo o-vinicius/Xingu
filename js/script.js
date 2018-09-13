@@ -27,7 +27,15 @@ $(function() {
                 items:5
             }
         }
-    })
+    });
+    
+    $('.gallery').owlCarousel({
+        loop:true,
+        margin:0,
+        nav:true,
+        mouseDrag:false,
+        items:1
+    });
     
     $('.navbar, .mobile-toggle, .menu-main > ul > li.sub-menu').addClass('menu-closed');
     $('.menu-main > ul > li.sub-menu > ul').slideUp();
