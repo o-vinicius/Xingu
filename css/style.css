@@ -830,17 +830,17 @@ section {
     right: 15px;
     bottom: 15px;
     display: block;
-    background-color: #fff;
+    background-color: #aa1a1a;
     padding: 5px 15px;
     border-radius: 5px;
     text-transform: uppercase;
-    color: #aa1a1a;
+    color: #fff;
     font-size: 12px;
     transition: all 0.3s ease;
 }
 .gallery .image a:hover {
-    background-color: #aa1a1a;
-    color: #fff;
+    background-color: #fff;
+    color: #393939;
 }
 .gallery .owl-nav {
     margin-top: 0;
@@ -901,22 +901,26 @@ article .tags {
     display: flex;
     flex-wrap: wrap;
 }
-.tags a {
+.tags a,
+.widget a {
     text-transform: uppercase;
-    font-size: 11px;
+    font-size: 10px;
     display: block;
-    border: 1px solid #393939;
-    border-radius: 5px;
-    color: #393939;
-    padding: 3px 10px;
+    border: 1px solid #969696;
+    border-radius: 7px;
+    color: #969696;
+    padding: 4px 15px;
     margin-right: 10px;
     transition: all 0.3s ease;
 }
-.tags a:hover {
+.tags a:hover,
+.widget a:hover {
     background-color: #aa1a1a;
     border-color: #aa1a1a;
     color: #fff;
 }
+
+
 article {
     border-bottom: 1px solid #e8e8e8;
     padding-bottom: 30px;
@@ -945,7 +949,46 @@ article .gallery .owl-stage-outer {
 article .content p {
     text-align: justify;
 }
+.widget {
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #969696;
+}
+.widget[class*="cols-"] .content {
+    display: block;
+    margin-left: -4px;
+    margin-right: -4px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.widget a {
+    margin: 4px;
+    text-align: center;
+    padding: 4px 4px;
+}
 
+.widget.cols-2 .content a {
+    width: calc(50% - 8px);
+}
+.widget.cols-3 .content a {
+    width: calc(33.33% - 8px);
+}
+.widget.cols-4 .content a {
+    width: calc(25% - 8px);
+}
+.widget h3 {
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.widget h3 small,
+.widget h3 span {
+    font-weight: 300;
+    letter-spacing: 0;
+    text-transform: none;
+}
 /*
 font-family: 'Open Sans', sans-serif;
 Light 300
