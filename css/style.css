@@ -309,6 +309,12 @@ header .container-fluid .navbar.menu-closed {
     margin-right: 5px;
     font-size: 13px;
     text-transform: uppercase;
+    margin-bottom: 10px;
+}
+@media (min-width: 992px) {
+    .menu-main > ul > li {
+        margin-bottom: 0px;
+    }
 }
 .menu-main > ul > li.menu-open {
     background-color: #881414;
@@ -343,10 +349,10 @@ header .container-fluid .navbar.menu-closed {
 }
 .menu-main > ul > li.sub-menu > i {
     position: absolute;
-    top: 4px;
+    top: 2px;
     right: 3px;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     display: block;
     padding: 5px;
     box-shadow: inset 0 0 0 1px #fff;
@@ -467,6 +473,7 @@ header .search input {
     height: 28px;
     border: none;
     border-radius: 0 100px 100px 0;
+    color: #393939;
 }
 @media (min-width: 992px) {
     header .search {
@@ -932,17 +939,19 @@ article:last-child {
     border-bottom: none;
 }
 article .image {
-    padding-top: 35%;
+    padding-top: 50%;
     background-position: center center;
     background-size: cover;
+}
+@media (min-width: 992px) {
+    article .image {
+        padding-top: 35%;
+    }
 }
 article > .image {
     margin: 30px 0;
     border-radius: 15px;
     box-shadow: inset 0 0 30px rgba(0,0,0,0.3);
-}
-article .gallery .image {
-    padding-top: 35%;
 }
 article .gallery .owl-stage-outer {
     border-radius: 15px;
@@ -978,6 +987,26 @@ article .content p {
 .widget.cols-4 .content a {
     width: calc(25% - 8px);
 }
+@media (min-width: 768px) {
+    .widget.cols-2 .content a {
+        width: calc(100% - 8px);
+    }
+    .widget.cols-3 .content a,
+    .widget.cols-4 .content a {
+        width: calc(50% - 8px);
+    }
+}
+@media (min-width: 992px) {
+    .widget.cols-2 .content a {
+        width: calc(50% - 8px);
+    }
+    .widget.cols-3 .content a {
+        width: calc(33.33% - 8px);
+    }
+    .widget.cols-4 .content a {
+        width: calc(25% - 8px);
+    }
+}
 .widget h3 {
     text-transform: uppercase;
     letter-spacing: 0.2em;
@@ -991,6 +1020,177 @@ article .content p {
     letter-spacing: 0;
     text-transform: none;
 }
+
+
+.search-acervo {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #969696;
+    border-left: 10px solid #aa1a1a;
+    border-radius: 0 100px 100px 0;
+    display: flex;
+}
+.search-acervo input,
+.search-acervo select {
+    border: none;
+    height: 40px;
+    margin: 5px;
+}
+.search-acervo input {
+    width: 100%;
+    padding: 0 10px;
+}
+@media (min-width: 768px) {
+    .search-acervo input {
+        width: calc(100% - 300px);
+    }
+}
+.search-acervo .btn-search {
+    background: none;
+    border: none;
+    display: flex;
+    padding: 0;
+    margin: 0 20px 0 10px;
+}
+
+
+.custom-select {
+    width: 300px;
+    position: relative;
+    display: none;
+}
+@media (min-width: 768px) {
+    .custom-select {
+        display: block;
+    }
+}
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+.select-selected {
+  background-color: #aa1a1a;
+    border-radius: 100px;
+    height: 40px;
+    margin: 5px;
+}
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: calc(50% - 2px);
+  right: 25px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+    transform: rotateX(180deg);
+    top: calc(50% - 10px);
+}
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #fff;
+  padding: 8px 16px;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+    text-align: left;
+}
+.select-items div {
+    color: #969696;
+}
+/*style items (options):*/
+.select-items {
+    width: 90%;
+  position: absolute;
+  background-color: #e8e8e8;
+  top: 100%;
+  left: 5%;
+  right: 0;
+  z-index: 99;
+}
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+.search-result-title {
+    font-size: 22px;
+    color: #aa1a1a;
+    margin-bottom: 30px;
+}
+@media (min-width: 992px) {
+    .search-result-title {
+        font-size: 26px;
+    }
+}
+.search-result-title span {
+    font-size: 16px;
+    font-weight: 300;
+    text-transform: none;
+}
+
+.search-result {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+.search-result article {
+    width: calc(100%);
+    margin: 12px;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    padding: 3px;
+}
+@media (min-width: 576px) {
+    .search-result article {
+        width: calc(50% - 24px);
+    }
+}
+@media (min-width: 992px) {
+    .search-result article {
+        width: calc(33.33% - 24px);
+    }
+}
+.search-result article:hover {
+    background-color: #aa1a1a;
+}
+.search-result article a {
+    overflow: hidden;
+    border-radius: 7px;
+    background-color: #e8e8e8;
+    display: block;
+    transition: all 0.3s ease;
+}
+.search-result article a:hover {
+    background-color: #aa1a1a;
+}
+.search-result article .image {
+    padding-top: 80%;
+}
+.search-result article h3 {
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: none;
+    margin: 0;
+    padding: 10px;
+    color: #393939;
+    transition: all 0.3s ease;
+}
+.search-result article a:hover h3 {
+    color: #fff;
+}
+
+
 /*
 font-family: 'Open Sans', sans-serif;
 Light 300
